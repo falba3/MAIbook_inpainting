@@ -1,4 +1,5 @@
 import os
+import graphics
 
 def masker(images_directory):
     images = os.listdir(images_directory)
@@ -8,4 +9,6 @@ def masker(images_directory):
     if not os.path.exists('masks'):
         os.mkdir('masks')
     else:
-        print(os.listdir('masks'))
+        pass
+
+masker('images')
