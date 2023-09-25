@@ -4,10 +4,9 @@ from graphics import GraphWin, Image, Point, Rectangle
 
 
 def masker(images_directory):
+    os.chdir(images_directory)
     if not os.path.exists('masks'):
         os.mkdir('masks')
-
-    os.chdir(images_directory)
     images = os.listdir()
     for image_n in images:
         if image_n != "masks" and image_n != '.DS_Store':
