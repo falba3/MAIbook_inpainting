@@ -1,5 +1,5 @@
 import os
-from PIL import Image as pil_Image
+from PIL import Image as pil_Image, ImageDraw, ImageFilter
 from graphics import GraphWin, Image, Point, Rectangle
 
 
@@ -23,7 +23,10 @@ def masker(images_directory):
         win.close()
         top_left = top_left.getX(), top_left.getY()
         bottom_right = bottom_right.getX(), bottom_right.getY()
-
-
+        mask = pil_Image.new('L', image.size, 0)
+        draw = ImageDraw.Draw(mask)
+        draw.rectangle((top_left[0], top_left[1], bottom_right[0], bottom_right[1]), fill=255)
+        blurred_mask = mask.filter(ImageFilter.GaussianBlur(radius=10))
+        blurred_mask.save(f'masks/{image_n}_mask.png')
 
 masker('images')
