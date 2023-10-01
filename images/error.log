@@ -4,3 +4,6 @@ ERROR:root:An error occurred: couldn't recognize data in image file "dog.jpg"
 ERROR:root:An error occurred: cannot identify image file 'error.log'
 ERROR:root:An error occurred: getMouse in closed window
 ERROR:root:An error occurred: couldn't recognize data in image file "dog.jpg"
+ERROR:root:An error occurred: getMouse in closed window
+ERROR:root:An error occurred: getMouse in closed window
+ERROR:root:An error occurred: getMouse in closed window
