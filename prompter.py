@@ -19,10 +19,9 @@ def prompter(images_directory):
                     win = GraphWin(image_n, width, height)
                     img = Image(Point(width/2, height/2), image_n)
                     img.draw(win)
-                    img.paste(mask, (0, 0), mask)
                     prompt = input("Prompt: ")
-                    #with open(f"prompts/{image_n[:-4]}.txt", 'w') as file:
-                        #file.write(prompt)
+                    with open(f"prompts/{image_n[:-4]}.txt", 'w') as file:
+                        file.write(prompt)
                     win.close()
         else:
             os.chdir('..')
