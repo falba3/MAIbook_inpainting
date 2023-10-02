@@ -21,7 +21,7 @@ def prompter(images_directory):
                     img.draw(win)
                     prompt = input("Prompt: ")
                     with open(f"prompts/{image_n[:-4]}.txt", 'w') as file:
-                        file.write(prompt)
+                        file.write(prompt + '. Watercolor style. ')
                     win.close()
         else:
             os.chdir('..')
