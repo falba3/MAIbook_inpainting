@@ -12,6 +12,7 @@ def inpainter(images_directory):
     global pipe
     if os.path.exists(images_directory):
         if os.path.exists(images_directory + '/masks') and os.path.exists(images_directory + '/prompts'):
+            os.mkdir("output")
             images = os.listdir(images_directory)
             for image_n in images:
                 if image_n != "masks" and image_n != '.DS_Store' and image_n != 'error.log' and image_n != 'prompts':
@@ -36,7 +37,7 @@ def inpainter(images_directory):
                                             num_inference_steps=20,
                                             guidance_scale=10
                                             ).images[0]
-                        image_output.save(f"/output/{name}_out.png")
+                        image_output.save(f"output/{name}_out.png")
 
                     else:
                         os.chdir('..')
