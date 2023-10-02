@@ -7,3 +7,6 @@ ERROR:root:An error occurred: couldn't recognize data in image file "dog.jpg"
 ERROR:root:An error occurred: getMouse in closed window
 ERROR:root:An error occurred: getMouse in closed window
 ERROR:root:An error occurred: getMouse in closed window
+ERROR:root:An error occurred: [Errno 21] Is a directory: 'prompts'
+ERROR:root:An error occurred: [Errno 21] Is a directory: 'prompts'
+ERROR:root:An error occurred: [Errno 21] Is a directory: 'prompts'

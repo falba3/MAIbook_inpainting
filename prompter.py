@@ -12,7 +12,7 @@ def prompter(images_directory):
                 os.mkdir('prompts')
             images = os.listdir()
             for image_n in images:
-                if image_n != "masks" and image_n != '.DS_Store' and image_n != 'error.log':
+                if image_n != "masks" and image_n != '.DS_Store' and image_n != 'error.log' and image_n != 'prompts':
                     image = pil_Image.open(image_n)
                     width, height = image.size
                     win = GraphWin(image_n, width, height)
