@@ -1,11 +1,15 @@
+import sys
 import os
 import logging
 from PIL import Image, ImageDraw, ImageFilter
-import torch
 from diffusers import DiffusionPipeline
+import torch
+
+
 pipe = DiffusionPipeline.from_pretrained("Lykon/absolute-realism-1.6525-inpainting").to("cuda")
 
 def inpainter(images_directory):
+    global pipe
     if os.path.exists(images_directory):
         if os.path.exists(images_directory + '/masks') and os.path.exists(images_directory + '/prompts'):
             images = os.listdir(images_directory)
@@ -48,3 +52,6 @@ def inpainter(images_directory):
         logging.basicConfig(filename='error.log', level=logging.ERROR)
         raise Exception(f"directory '{images_directory}' does not exist")
 
+if __name__ == "__main__":
+    inp = "".join(sys.argv[1:])
+    inpainter(inp)
