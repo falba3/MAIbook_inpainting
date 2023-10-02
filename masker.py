@@ -12,7 +12,7 @@ def masker(images_directory):
                 os.mkdir('masks')
             images = os.listdir()
             for image_n in images:
-                if image_n != "masks" and image_n != '.DS_Store' and image_n != 'error.log' and image_n != 'prompts':
+                if image_n != "masks" and image_n != '.DS_Store' and image_n != 'error.log':
                     image = pil_Image.open(image_n)
                     width, height = image.size
                     win = GraphWin(image_n, width, height)

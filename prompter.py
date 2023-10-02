@@ -10,7 +10,7 @@ def prompter(images_directory):
             os.chdir(images_directory)
             if not os.path.exists('prompts'):
                 os.mkdir('prompts')
-            images = os.listdir()
+            images = os.listdir('masks')
             for image_n in images:
                 if image_n != "masks" and image_n != '.DS_Store' and image_n != 'error.log' and image_n != 'prompts':
                     image = pil_Image.open(image_n)

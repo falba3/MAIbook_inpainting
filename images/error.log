@@ -10,3 +10,4 @@ ERROR:root:An error occurred: getMouse in closed window
 ERROR:root:An error occurred: [Errno 21] Is a directory: 'prompts'
 ERROR:root:An error occurred: [Errno 21] Is a directory: 'prompts'
 ERROR:root:An error occurred: [Errno 21] Is a directory: 'prompts'
+ERROR:root:An error occurred: [Errno 2] No such file or directory: 'castle_mask.png'
