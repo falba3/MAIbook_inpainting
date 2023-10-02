@@ -32,7 +32,7 @@ def inpainter(images_directory):
                                              width=background.size[0],
                                              height=background.size[1],
                                             negative_prompt=negative_prompt,
-                                            strength=1,
+                                            strength=0.99,
                                             num_inference_steps=20,
                                             guidance_scale=10
                                             ).images[0]
