@@ -2,8 +2,8 @@ import sys
 import os
 import logging
 from PIL import Image
-# from diffusers import DiffusionPipeline
-# import torch
+from diffusers import DiffusionPipeline
+import torch
 
 
 pipe = DiffusionPipeline.from_pretrained("Lykon/absolute-realism-1.6525-inpainting").to("cuda")
