@@ -23,7 +23,7 @@ def inpainter(images_directory):
                         with open(f"{images_directory}/prompts/{name}.txt", 'r') as file:
                             prompt = file.readline()
                         background = Image.open(f"{images_directory}/{name}.png")
-                        negative_prompt = ""
+                        negative_prompt = "Out of frame, cropped, deformed, disfigured, extra character, headless, unclear, Nikon, Sony, Canon, DSLR, photorealism, photorealistic, lens, aperture, 85mm, 100mm, 200mm, kiss, scary, violence, alcohol, drugs, text, font, letters, blood, injury, watermark, logo"
                         mask = Image.open(f"{images_directory}/masks/{name}_mask.png")
 
                         image_output = pipe(prompt=prompt,
