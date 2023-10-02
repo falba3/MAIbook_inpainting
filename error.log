@@ -1,3 +1,4 @@
 ERROR:root:An error occurred: directory does not exist
 ERROR:root:An error occurred: directory 'deez' does not exist
 ERROR:root:An error occurred: [Errno 22] Invalid argument: 3
+ERROR:root:An error occurred: 'Image' object has no attribute 'paste'

@@ -32,10 +32,12 @@ def masker(images_directory):
                     blurred_mask = mask.filter(ImageFilter.GaussianBlur(radius=10))
                     blurred_mask.save(f'masks/{image_n[:-4]}_mask.png')
         else:
+            os.chdir(images_directory)
             logging.basicConfig(filename='error.log', level=logging.ERROR)
             raise Exception(f"directory '{images_directory}' does not exist")
 
     except Exception as e:
+        os.chdir(images_directory)
         logging.basicConfig(filename='error.log', level=logging.ERROR)
         logging.error(f"An error occurred: {str(e)}")
 
