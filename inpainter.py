@@ -33,9 +33,9 @@ def inpainter(images_directory):
                                              width=background.size[0],
                                              height=background.size[1],
                                             negative_prompt=negative_prompt,
-                                            strength=0.99,
+                                            strength=1,
                                             # strength=1,
-                                            num_inference_steps=30,
+                                            num_inference_steps=20,
                                             guidance_scale=10
                                             ).images[0]
                         image_output.save(f"{name}_output.png")
