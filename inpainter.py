@@ -6,8 +6,8 @@ from diffusers import DiffusionPipeline
 import torch
 
 
-pipe = DiffusionPipeline.from_pretrained("Lykon/absolute-realism-1.6525-inpainting").to("cuda")
-# pipe = DiffusionPipeline.from_pretrained("Lykon/dreamshaper-7-inpainting").to("cuda")
+# pipe = DiffusionPipeline.from_pretrained("Lykon/absolute-realism-1.6525-inpainting").to("cuda")
+pipe = DiffusionPipeline.from_pretrained("Lykon/dreamshaper-7-inpainting").to("cuda")
 
 def inpainter(images_directory):
     global pipe
