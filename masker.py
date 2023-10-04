@@ -42,4 +42,4 @@ def masker(images_directory):
         logging.error(f"An error occurred: {str(e)}")
 
 
-masker('images')
+masker('images 2')
