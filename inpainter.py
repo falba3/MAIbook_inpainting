@@ -6,8 +6,8 @@ from diffusers import DiffusionPipeline
 import torch
 
 
-# pipe = DiffusionPipeline.from_pretrained("Lykon/absolute-realism-1.6525-inpainting").to("cuda")
-pipe = DiffusionPipeline.from_pretrained("Lykon/dreamshaper-7-inpainting").to("cuda")
+pipe = DiffusionPipeline.from_pretrained("Lykon/absolute-realism-1.6525-inpainting").to("cuda")
+# pipe = DiffusionPipeline.from_pretrained("Lykon/dreamshaper-7-inpainting").to("cuda")
 
 def inpainter(images_directory):
     global pipe
@@ -30,8 +30,8 @@ def inpainter(images_directory):
                         image_output = pipe(prompt=prompt,
                                              image=background,
                                              mask_image=mask,
-                                             width=background.size[0],
-                                             height=background.size[1],
+                                             # width=background.size[0],
+                                             # height=background.size[1],
                                             negative_prompt=negative_prompt,
                                             strength=0.99999,
                                             # strength=1,
