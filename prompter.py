@@ -35,4 +35,4 @@ def prompter(images_directory):
         logging.error(f"An error occurred: {str(e)}")
 
 
-prompter('images2')
+prompter('images')
