@@ -38,7 +38,7 @@ def inpainter(images_directory):
                                             num_inference_steps=20,
                                             guidance_scale=10
                                             ).images[0]
-                        image_output.save(f"{name}_output.png")
+                        image_output.save(f"{images_directory}/outputs/{name}_output.png")
 
                     else:
                         os.chdir('..')
