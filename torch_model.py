@@ -40,13 +40,20 @@ def auto_masker(images_directory):
 
                 for box, label, score in zip(child_boxes, child_labels, child_scores):
                     x, y, x2, y2 = map(int, box)
-                    print(box)
+                    print(f"{image_n}: {box}")
                     # label_name = str(label.item())
                     ax.add_patch(plt.Rectangle((x, y), x2 - x, y2 - y, fill=False, color='green', linewidth=2))
                     ax.text(x, y - 5, f"Child: {score:.2f}", color='green', fontsize=10, backgroundcolor="white")
 
                     plt.axis('off')
                     plt.show()
+                print(len(child_boxes), len(child_labels), len(child_scores))
+
+                # mask = pil_Image.new('L', image.size, 0)
+                # draw = ImageDraw.Draw(mask)
+                # draw.rectangle((top_left[0], top_left[1], bottom_right[0], bottom_right[1]), fill=255)
+                # blurred_mask = mask.filter(ImageFilter.GaussianBlur(radius=10))
+                # blurred_mask.save(f'masks/{image_n[:-4]}_mask.png')
 
 
-auto_masker('images2')
+auto_masker('images')
