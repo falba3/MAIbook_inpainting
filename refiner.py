@@ -17,17 +17,17 @@ def refiner(images_directory):
             if os.path.exists(images_directory + '/masks') and os.path.exists(images_directory + '/prompts'):
                 if not os.path.exists(images_directory + '/refined'):
                     os.mkdir(images_directory + 'outputs/refined')
-                images = os.listdir(images_directory + '/outputs')
+                images = os.listdir(images_directory)
                 for image_n in images:
                     if image_n[-4:] == '.png':
                         name = image_n[:-4]
-                        if os.path.exists(f"{images_directory}/{name}.png") and os.path.exists(f"{images_directory}/masks/{name}_mask.png")\
+                        if os.path.exists(f"{images_directory}/outputs/{name}_output.png") and os.path.exists(f"{images_directory}/masks/{name}_mask.png")\
                                 and os.path.exists(f"{images_directory}/prompts/{name}.txt"):
-                            print(f"image:  {images_directory}/{name}.png\nmask:    {images_directory}/masks/{name}_mask.png\nprompt:    {images_directory}/prompts/{name}.txt")
+                            print(f"image:  {images_directory}/outputs/{name}_output.png\nmask:    {images_directory}/masks/{name}_mask.png\nprompt:    {images_directory}/prompts/{name}.txt")
 
                             with open(f"{images_directory}/prompts/{name}.txt", 'r') as file:
                                 prompt = file.readline()
-                            background = Image.open(f"{images_directory}/{name}.png")
+                            background = Image.open(f"{images_directory}/outputs/{name}_output.png")
                             negative_prompt = "Out of frame, cropped, deformed, disfigured, extra character, headless, unclear, Nikon, Sony, Canon, DSLR, photorealism, photorealistic, lens, aperture, 85mm, 100mm, 200mm, kiss, scary, violence, alcohol, drugs, text, font, letters, blood, injury, watermark, logo"
                             mask = Image.open(f"{images_directory}/masks/{name}_mask.png")
 
