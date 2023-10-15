@@ -42,7 +42,7 @@ def refiner(images_directory):
                                                 num_inference_steps=20,
                                                 guidance_scale=10
                                                 ).images[0]
-                            image_output.save(f"{images_directory}/refined/{name}_refined.png")
+                            image_output.save(f"{images_directory}/outputs/refined/{name}_refined.png")
 
                         else:
                             os.chdir(images_directory)
