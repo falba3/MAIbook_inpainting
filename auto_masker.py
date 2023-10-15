@@ -9,7 +9,7 @@ from PIL import Image, ImageFilter, ImageDraw
 # import matplotlib.pyplot as plt
 
 
-def auto_masker(images_directory):
+def masker(images_directory):
     try:
         model = fasterrcnn_resnet50_fpn(weights=True)
         model.eval()
@@ -75,8 +75,8 @@ def auto_masker(images_directory):
         logging.error(f"An error occurred: {str(e)}")
 
 
-auto_masker('/Users/franco/Desktop/backgrounds')
+# masker('/Users/franco/Desktop/backgrounds')
 
 if __name__ == "__main__":
     inp = "".join(sys.argv[1:])
-    auto_masker(inp)
+    masker(inp)
