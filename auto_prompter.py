@@ -1,9 +1,7 @@
 import os
 import sys
 import logging
-from PIL import Image as pil_Image
 import pandas as pd
-from graphics import GraphWin, Image, Point
 
 
 def prompter(images_directory):
