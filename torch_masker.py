@@ -1,4 +1,5 @@
 import os
+import sys
 import torch
 from torchvision.models.detection import fasterrcnn_resnet50_fpn
 from torchvision.transforms.functional import to_tensor
@@ -41,7 +42,6 @@ def auto_masker(images_directory):
                 for box, label, score in zip(child_boxes, child_labels, child_scores):
                     x, y, x2, y2 = map(int, box)
                     print(f"{image_n}: {box}")
-                    # label_name = str(label.item())
                     ax.add_patch(plt.Rectangle((x, y), x2 - x, y2 - y, fill=False, color='green', linewidth=2))
                     ax.text(x, y - 5, f"Child: {score:.2f}", color='green', fontsize=10, backgroundcolor="white")
 
@@ -56,4 +56,8 @@ def auto_masker(images_directory):
                 # blurred_mask.save(f'masks/{image_n[:-4]}_mask.png')
 
 
-auto_masker('/Users/franco/Desktop/backgrounds')
+# auto_masker('/Users/franco/Desktop/backgrounds')
+
+if __name__ == "__main__":
+    inp = "".join(sys.argv[1:])
+    auto_masker(inp)

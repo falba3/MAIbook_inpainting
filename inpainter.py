@@ -15,7 +15,8 @@ def inpainter(images_directory):
         if os.path.exists(images_directory + '/masks') and os.path.exists(images_directory + '/prompts'):
             images = os.listdir(images_directory)
             for image_n in images:
-                if image_n != "masks" and image_n != '.DS_Store' and image_n != 'error.log' and image_n != 'prompts':
+                # if image_n != "masks" and image_n != '.DS_Store' and image_n != 'error.log' and image_n != 'prompts':
+                if image_n[-4:] == '.png':
                     name = image_n[:-4]
                     if os.path.exists(f"{images_directory}/{name}.png") and os.path.exists(f"{images_directory}/masks/{name}_mask.png")\
                             and os.path.exists(f"{images_directory}/prompts/{name}.txt"):
