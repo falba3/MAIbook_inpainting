@@ -37,9 +37,9 @@ def refiner(images_directory):
                                                  # width=background.size[0],
                                                  # height=background.size[1],
                                                 negative_prompt=negative_prompt,
-                                                strength=0.99999,
+                                                strength=0.8,
                                                 # strength=1,
-                                                num_inference_steps=20,
+                                                num_inference_steps=30,
                                                 guidance_scale=10
                                                 ).images[0]
                             image_output.save(f"{images_directory}/outputs/refined/{name}_refined.png")
