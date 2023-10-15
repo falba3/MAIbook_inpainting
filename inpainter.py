@@ -3,7 +3,7 @@ import os
 import logging
 from PIL import Image
 from diffusers import DiffusionPipeline
-import torch
+# import torch
 
 
 pipe = DiffusionPipeline.from_pretrained("Lykon/absolute-realism-1.6525-inpainting").to("cuda")
@@ -47,7 +47,7 @@ def inpainter(images_directory):
                         else:
                             os.chdir(images_directory)
                             logging.basicConfig(filename='error.log', level=logging.ERROR)
-                            raise Exception(f"missing mask for {name}.png")
+                            raise Exception(f"missing mask or prompt for {name}.png")
 
             else:
                 os.chdir(images_directory)
