@@ -16,7 +16,7 @@ def refiner(images_directory):
         if os.path.exists(images_directory):
             if os.path.exists(images_directory + '/masks') and os.path.exists(images_directory + '/prompts'):
                 if not os.path.exists(images_directory + '/refined'):
-                    os.mkdir(images_directory + 'outputs/refined')
+                    os.mkdir(images_directory + '/outputs/refined')
                 images = os.listdir(images_directory)
                 for image_n in images:
                     if image_n[-4:] == '.png':
