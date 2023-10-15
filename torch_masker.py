@@ -56,4 +56,4 @@ def auto_masker(images_directory):
                 # blurred_mask.save(f'masks/{image_n[:-4]}_mask.png')
 
 
-auto_masker('images')
+auto_masker('/Users/franco/Desktop/backgrounds')
