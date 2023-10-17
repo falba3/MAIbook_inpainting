@@ -51,7 +51,7 @@ def inpainter(images_directory):
                                                 negative_prompt=negative_prompt,
                                                 # strength=0.9,
                                                 strength=0.7,
-                                                num_inference_steps=10,
+                                                num_inference_steps=30,
                                                 guidance_scale=10
                                                 ).images[0]
 
