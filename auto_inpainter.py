@@ -43,7 +43,7 @@ def inpainter(images_directory):
                                                 guidance_scale=10
                                                 ).images[0]
 
-                            image_output = base(prompt=prompt,
+                            image_output = refiner(prompt=prompt,
                                                  image=image_output,
                                                  mask_image=mask,
                                                  # width=background.size[0],
