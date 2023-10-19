@@ -56,6 +56,8 @@ def inpainter(images_directory):
                                                 ).images[0]
 
                             image_output.save(f"{images_directory}/outputs/{name}_output.png")
+                            print(f"{images_directory}/{name}.png has been inpainted! ")
+                            torch.cuda.empty_cache()  # Clear Cache for MEMORY
 
                         else:
                             os.chdir(images_directory)

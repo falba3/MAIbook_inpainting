@@ -13,9 +13,17 @@ def main(images_directory):
         if os.path.exists(images_directory):
             os.chdir(images_directory)
 
+            print("\n\nMasking images now...\n")
             masker(images_directory)
+            print("MASKING COMPLETE!")
+
+            print("\n\nExtracing prompts now...\n")
             prompter(images_directory)
+            print("PROMPTS COMPLETE!")
+
+            print("\n\nStarting inpainting process...\n")
             inpainter(images_directory)
+            print("INPAINTING COMPLETE!")
 
         else:
             os.chdir(images_directory)

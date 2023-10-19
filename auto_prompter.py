@@ -22,6 +22,7 @@ def prompter(images_directory):
                 photo = str(row['photo'])
                 with open(f"prompts/{photo}.txt", 'w') as file:
                     file.write(prompt)
+                print(f"{photo}.png prompt received! ")
         else:
             os.chdir(images_directory)
             logging.basicConfig(filename='error.log', level=logging.ERROR)
